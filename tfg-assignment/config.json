@@ -1,0 +1,17 @@
+{
+    "PORT": 7005,
+    "jwtSecret": "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",
+
+    "mySqlConfig": {
+		"host": "mysql-ae8a523-unthinkable-017d.a.aivencloud.com",
+		"mysql_db": "tfg",
+		"mysql_user": "avnadmin",
+		"mysql_password": "AVNS_-lDN3KgYoF9Nd15PRhV",
+		"connection_pool": 50,
+        "port": 10968
+	},
+
+    "mongoDb": {
+        "uri": "mongodb+srv://rohitkumar:rk%4012345@cluster0.u4zi5jf.mongodb.net/tfg"
+    }
+}

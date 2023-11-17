@@ -1,0 +1,7 @@
+# Ignore VS Code
+.vscode/
+.prettierrc.js
+
+# Dependency directories
+node_modules/
+jspm_packages/

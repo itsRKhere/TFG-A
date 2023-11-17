@@ -1,0 +1,68 @@
+# Register user API: 
+
+curl --location 'http://localhost:7005/user/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "nitin@gmail.com",
+    "username": "nitinsharma",
+    "password": "13242562a"
+}'
+
+
+
+# Login user API: 
+
+curl --location 'http://localhost:7005/user/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "username": "nitinsharma",
+    "password": "13242562a"
+}'
+
+
+
+
+## Note: If the JWT token has expired, please update it with a new one, which can be obtained from the login API to use the following cURL commands -
+
+
+# Add user game data API:
+
+curl --location 'http://localhost:7005/game/add-user-stats' \
+--header 'Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwMDEzNjI1OSwiZXhwIjoxNzAwMTM5ODU5fQ.xp7bnGOwb734gqjisEHiU12a_rvIVVppV75o50plOYw' \
+--header 'Content-Type: application/json' \
+--data '{
+    "playerName": "Nitin",
+    "points": 123,
+    "gameType": "Cricket",
+    "result": "win"
+}'
+
+
+
+
+# Fetch user game data API:
+
+curl --location 'http://localhost:7005/game/get-user-stats' \
+--header 'Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwMDEzNjI1OSwiZXhwIjoxNzAwMTM5ODU5fQ.xp7bnGOwb734gqjisEHiU12a_rvIVVppV75o50plOYw'
+
+
+
+
+# Update user points API:
+
+curl --location --request PUT 'http://localhost:7005/game/update-user-stats' \
+--header 'Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwMDEzNjI1OSwiZXhwIjoxNzAwMTM5ODU5fQ.xp7bnGOwb734gqjisEHiU12a_rvIVVppV75o50plOYw' \
+--header 'Content-Type: application/json' \
+--data '{
+    "points": 200
+}'
+
+
+
+
+# Delete user game data API:
+
+curl --location --request DELETE 'http://localhost:7005/game/delete-user-stats' \
+--header 'Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwMDEzNjI1OSwiZXhwIjoxNzAwMTM5ODU5fQ.xp7bnGOwb734gqjisEHiU12a_rvIVVppV75o50plOYw' \
+--data ''
+
