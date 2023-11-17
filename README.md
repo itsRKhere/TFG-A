@@ -16,7 +16,7 @@ This backend, designed for a TFG assignment, handles user registration and login
 1. Clone repository:
    
 ```
-git clone https://rrohitkumar@bitbucket.org/daffodilsoftware/ta072.git 
+git clone https://github.com/itsRKhere/TFG-A.git 
 ```
 
 2. Prerequisites:
