@@ -1,7 +1,7 @@
 // Import the required module 'express' to create the router.
 const express = require('express');
 const auth = require('../../auth/auth');
-const { validationMiddleware } = require('../../utils/validationMiddleware');
+const { checkValidations } = require('../../utils/validationMiddleware');
 const validations = require('../userValidation');
 
 // Create a new router instance.
@@ -12,16 +12,14 @@ const userController = require('../controllers/userController');
 
 // routes to request 
 router.post(
-    '/register', 
-    validations.register,
-    validationMiddleware,
+    '/register',
+    checkValidations(validations.register),
     userController.register
 );
 
 router.post(
     '/login', 
-    validations.login,
-    validationMiddleware,
+    checkValidations(validations.login),
     userController.login
 );
 

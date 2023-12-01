@@ -1,7 +1,7 @@
 // Import the required module 'express' to create the router.
 const express = require('express');
 const auth = require('../../auth/auth');
-const { validationMiddleware } = require('../../utils/validationMiddleware');
+const { checkValidations } = require('../../utils/validationMiddleware');
 const validations = require('../gameValidation');
 
 // Create a new router instance.
@@ -14,8 +14,7 @@ const gameController = require('../controllers/gameController');
 router.post(
     '/add-user-stats', 
     auth.authenticate,
-    validations.add,
-    validationMiddleware,
+    checkValidations(validations.add),
     gameController.addUserGameData
 );
 
@@ -28,8 +27,7 @@ router.get(
 router.put(
     '/update-user-stats', 
     auth.authenticate,
-    validations.updatePoints,
-    validationMiddleware,
+    checkValidations(validations.updatePoints),
     gameController.updateUserGamePoints
 );
 

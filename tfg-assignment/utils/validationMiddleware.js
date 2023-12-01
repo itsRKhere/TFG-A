@@ -1,7 +1,7 @@
 // Import required modules
 const { validationResult } = require('express-validator');
 
-exports.validationMiddleware = (req, res, next) => {
+const validationMiddleware = (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -9,4 +9,8 @@ exports.validationMiddleware = (req, res, next) => {
         return res.status(400).json({ errors: errorMessages });
     }
     next();
+};
+
+exports.checkValidations = (validationsArray) => {
+    return [...validationsArray, validationMiddleware];
 };
