@@ -1,7 +1,7 @@
 {
-  "name": "tfg-assignment",
+  "name": "tfg",
   "version": "1.0.0",
-  "description": "Assignment for tfg hiring",
+  "description": "CRUD project",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server",
