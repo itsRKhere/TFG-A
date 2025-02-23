@@ -1,4 +1,4 @@
-# Summarizer
+# CRUD App
 
 This backend, handles user registration and login with all required validations. It supports CRUD operations for user-specific game data and utilizes a RabbitMQ event listener to seamlessly capture and store logs during registration.
 
